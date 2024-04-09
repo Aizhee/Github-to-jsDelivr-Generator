@@ -8,12 +8,18 @@ gap: 20px;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background: hsla(192, 95%, 50%, 1);
+color: #fff;
+background: #18122B;
 
-background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
-background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
-background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#07C8F9", endColorstr="#0D41E1", GradientType=1 );
+}
+
+h1 {
+    font-family: "Russo One", sans-serif;
+    font-weight: 300;
+}
+a {
+    text-decoration: none;
+    color: #8a79c3;
 }
 
 ol {
@@ -22,11 +28,24 @@ ol {
     margin-bottom: 20px;
 }
 
+#inst {
+    color:#878297;
+}
+input[type="text"]::placeholder {
+    color: #8a79c3;
+}
+
 .container {
-background-color: #fff;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: solid 4px #443C68;
+    background-color: #393053;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 h1 {
@@ -44,7 +63,8 @@ input[type="text"] {
 width: 100%;
 padding: 8px;
 margin-bottom: 10px;
-border: 1px solid #ccc;
+border: 2px solid #635985;
+background-color: #18122B;
 border-radius: 4px;
 box-sizing: border-box;
 }
@@ -59,18 +79,22 @@ position: relative;
     right: 0;
     padding: 9px 10px;
     border: none;
-    background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+    background: #635985;
     color: #fff;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
 }
 
 .copy-button:hover {
-    background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, rgb(51, 96, 230) 100%);
-    background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, rgb(51, 96, 230) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, rgb(51, 96, 230) 100%);
+    background: hsla(280, 84%, 41%, 1);
+
+background: linear-gradient(0deg, hsla(280, 84%, 41%, 1) 0%, rgb(143, 34, 252) 100%);
+
+background: -moz-linear-gradient(0deg, hsla(280, 84%, 41%, 1) 0%,rgb(143, 34, 252)100%);
+
+background: -webkit-linear-gradient(0deg, hsla(280, 84%, 41%, 1) 0%, rgb(143, 34, 252) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#8711C1", endColorstr="#2472FC", GradientType=1 );
 }
 
 .copy-button:hover::after {
