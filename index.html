@@ -5,147 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CDN Link Generator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f5f5f5;
-    }
-
-    .container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    .input-group {
-      position: relative;
-    }
-
-    .copy-button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 9px 10px;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 0 4px 4px 0;
-        cursor: pointer;
-    }
-
-    .copy-button:hover {
-        background-color: #3798ff;
-    }
-
-    .copy-button:hover::after {
-        content: "Copy";
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 5px;
-        background-color: #000;
-        color: #fff;
-        font-size: 12px;
-        border-radius: 4px;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    .copy-button:hover::before {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 5px solid transparent;
-        border-bottom-color: #000;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    .copy-button:hover::after,
-    .copy-button:hover::before {
-        opacity: 1;
-    }
-
-    #cdnLink {
-      font-size: 16px;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+    
   <div class="container">
     <h1>jsDelivr CDN Link Generator</h1>
+    <ol>
+        <li>Create a GitHub repository and upload your file.</li>
+        <li>Enter the URL of your file hosted on GitHub</li>
+        <li>Wait for the CDN link to be automatically generated:</li>
+        <li>Copy the generated CDN link using the "Copy URL" button.</li>
+        <li>You can paste multiple links separated by a space.</li>
+    </ol>
     <input type="text" id="urlInput" placeholder="Enter Github file link (blob or raw)">
     <div class="input-group">
       <input type="text" id="generatedLink" readonly placeholder="Link will generate here">
-      <button class="copy-button" onclick="copyLinkToClipboard()">
-        <i class="fas fa-copy"></i> 
-      </button>
+    <button class="copy-button" onclick="copyLinkToClipboard()" aria-label="Copy Link">
+      <i class="fas fa-copy"></i> 
+    </button>
     </div>
-    <p id="cdnLink"></p>
+    
   </div>
-
-  <script>
-    function generateCDNLink() {
-      var inputUrl = document.getElementById("urlInput").value.trim();
-      var cdnLink = "";
-
-      if (inputUrl.startsWith("https://github.com/") && inputUrl.includes("/blob/")) {
-        cdnLink = inputUrl.replace("https://github.com/", "https://cdn.jsdelivr.net/gh/");
-        cdnLink = cdnLink.replace("/blob/", "/");
-        cdnLink = cdnLink.replace("/main/", "/"); // Remove the branch name
-      } else if (inputUrl.startsWith("https://raw.githubusercontent.com/")) {
-        var parts = inputUrl.split("/");
-        var userRepo = parts[4] + "/" + parts[5];
-        var filename = parts.slice(6).join("/");
-        cdnLink = "https://cdn.jsdelivr.net/gh/" + userRepo + "/" + filename;
-      } else {
-        cdnLink = "Invalid URL";
-      }
-
-      document.getElementById("generatedLink").value = cdnLink;
-
-    }
-
-    function copyLinkToClipboard() {
-      var linkInput = document.getElementById("generatedLink");
-      linkInput.select();
-      document.execCommand("copy");
-    }
-
-    // Listen for input events on the URL input field
-    document.getElementById("urlInput").addEventListener("input", generateCDNLink);
-  </script>
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github Repo Link">
+  <script src="./js/main.js"></script>
 </body>
 </html>

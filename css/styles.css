@@ -1,0 +1,111 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+gap: 20px;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: hsla(192, 95%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#07C8F9", endColorstr="#0D41E1", GradientType=1 );
+}
+
+ol {
+    list-style-type: decimal;
+    margin-left: -20px;
+    margin-bottom: 20px;
+}
+
+.container {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+font-size: 24px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+p {
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+input[type="text"] {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.input-group {
+position: relative;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 9px 10px;
+    border: none;
+    background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, rgb(51, 96, 230) 100%);
+    background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, rgb(51, 96, 230) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, rgb(51, 96, 230) 100%);
+}
+
+.copy-button:hover::after {
+    content: "Copy";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.copy-button:hover::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-bottom-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.copy-button:hover::after,
+.copy-button:hover::before {
+    opacity: 1;
+}
+
+#cdnLink {
+font-size: 16px;
+margin-top: 10px;
+}
